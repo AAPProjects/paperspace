@@ -1,0 +1,28 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.9",
+    "heartbeatAt": "2022-03-29T21:47:41.238768",
+    "startedAt": "2022-03-29T21:47:33.904384",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "--ip=127.0.0.1",
+        "--stdin=9004",
+        "--control=9002",
+        "--hb=9000",
+        "--Session.signature_scheme=\"hmac-sha256\"",
+        "--Session.key=b\"f9e42393-6a5c-4332-8231-8dbd2bf6f146\"",
+        "--shell=9003",
+        "--transport=\"tcp\"",
+        "--iopub=9005",
+        "--f=C:\\Users\\Owner\\AppData\\Local\\Temp\\tmp-4512yEV72vGL7B3B.json"
+    ],
+    "state": "running",
+    "program": "./train_model_wandb.ipynb",
+    "host": "LAPTOP-7JJ912FA",
+    "username": "Owner",
+    "executable": "C:\\Users\\Owner\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+}
