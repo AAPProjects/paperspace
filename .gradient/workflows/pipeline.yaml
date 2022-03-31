@@ -7,15 +7,18 @@ defaults:
     branches:
       only: main
 jobs:
-  # CloneRepo:
-  #   uses: git-checkout@v1
-  #   with:
-  #     url: context.event.github.url
-  #   outputs:
-  #     repo:
-  #       type: volume
-  #   resources:
-  #     instance-type: C4
+  
+  CloneRepo:
+    uses: git-checkout@v1
+    with:
+      url: https://github.com/AbirRahaliR/ResNet-PyTorch.git
+      # username: AbirRahaliR
+      # password: secret:abir_github_token
+    outputs:
+      repo:
+        type: volume
+    resources:
+      instance-type: C4
   TrainResNet18:
     uses: script@v1
     with:
@@ -26,10 +29,10 @@ jobs:
         python train_model_wandb.py --layers=18 --epochs="$batches"
         # cp -R /inputs/repo /outputs
         # cp -R model/resnet18-epochs-"$batches".pth /outputs/model
-    # needs:
-    #   - CloneRepo
+    needs:
+      - CloneRepo
     inputs:
-      # repo: CloneRepo.outputs.repo
+      repo: CloneRepo.outputs.repo
       cifar10-data: 
         type: dataset
         with:
